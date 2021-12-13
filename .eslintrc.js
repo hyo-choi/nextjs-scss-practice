@@ -26,5 +26,6 @@ module.exports = {
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
     'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'import/extensions': ['error', { ts: 'never' }],
   },
 };
