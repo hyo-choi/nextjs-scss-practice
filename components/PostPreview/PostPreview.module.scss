@@ -1,0 +1,27 @@
+.preview {
+  p, h2 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  & + & {
+    border-top: solid 1px #eee;
+  }
+}
+
+.post {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+}
+
+.withImage {
+  width: calc(100% - 100px);
+}
+
+.image {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
