@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
 import styles from './post.module.scss';
-import { getPost, getPostCount, PostInfoType } from '../../data/posts';
+import { getPost, getPostCount } from '../../utils/api/posts';
+import { PostInfoType } from '../../types/post';
 import PostPreview from '../../components/PostPreview/PostPreview';
 import Pagination from '../../components/Pagination/Pagination';
 import CommentContainer from '../../components/CommentContainer/CommentContainer';

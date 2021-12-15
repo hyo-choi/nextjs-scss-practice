@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { CommentType } from '../../data/posts';
+import { CommentType } from '../../types/post';
 import Button from '../Button/Button';
 import Comment from '../Comment/Comment';
 import styles from './CommentContainer.module.scss';

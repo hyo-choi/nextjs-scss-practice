@@ -1,22 +1,4 @@
-export type PostType = {
-  userId: number,
-  id: number,
-  title: string,
-  body: string,
-};
-
-export type CommentType = {
-  postId: number,
-  id: number,
-  name: string,
-  email: string,
-  body: string,
-};
-
-export type PostInfoType = {
-  content: PostType,
-  comments?: CommentType[],
-};
+import { CommentType, PostType } from '../../types/post';
 
 export async function getPosts(perPage?: number, page?: number) {
   const result = await fetch('https://jsonplaceholder.typicode.com/posts');
