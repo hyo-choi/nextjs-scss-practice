@@ -6,7 +6,8 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/preset-scss",
-    "@storybook/addon-a11y"
+    "@storybook/addon-a11y",
+    "storybook-addon-next-router"
   ],
   "framework": "@storybook/react",
   "core": {

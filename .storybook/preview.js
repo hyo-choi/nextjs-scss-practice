@@ -1,3 +1,4 @@
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import '../styles/globals.scss';
 import * as nextImage from 'next/image';
 
@@ -14,4 +15,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  nextRouter: {
+    Provider: RouterContext.Provider,
+    path: '/',
+    asPath: '/',
+    push() {},
+  },
+};
