@@ -12,12 +12,13 @@ type PaginationProps = {
 const Pagination = ({
   path, start, end, prev, next,
 }: PaginationProps) => {
-  const pages = Array(end - start + 1).fill(start).map((value, idx) => value + idx);
+  const newEnd = start > end ? start : end;
+  const pages = Array(newEnd - start + 1).fill(start).map((value, idx) => value + idx);
   return (
     <div className={styles.pagination}>
       {prev && <PageButton href={`${path}/${start - 1}`}>PREV</PageButton>}
       {pages.map((page) => <PageButton key={page} href={`${path}/${page}`}>{page}</PageButton>)}
-      {next && <PageButton href={`${path}/${end + 1}`}>NEXT</PageButton>}
+      {next && <PageButton href={`${path}/${newEnd + 1}`}>NEXT</PageButton>}
     </div>
   );
 };
