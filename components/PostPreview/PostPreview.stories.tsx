@@ -25,7 +25,7 @@ WithImage.args = {
 
 export const List: ComponentStory<typeof PostPreview> = (args) => {
   // eslint-disable-next-line react/jsx-props-no-spreading
-  const Component = useCallback(() => <PostPreview {...args} />, []);
+  const Component = useCallback(() => <PostPreview {...args} />, [args]);
   return (
     <>
       <Component />
