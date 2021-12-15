@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import classNames from 'classnames';
+import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
+import Button from '../../Button/Button';
 import styles from './PageButton.module.scss';
 
 type PageButtonProps = {
@@ -13,12 +14,12 @@ const PageButton = ({ href, children }: PageButtonProps) => {
   const { asPath } = useRouter();
 
   return (
-    <div className={classNames(styles.button, { [styles.active]: asPath === href })}>
+    <div className={classnames(styles.button, { [styles.active]: asPath === href })}>
       <Link href={href}>
         <a>
-          <div>
+          <Button link>
             {children}
-          </div>
+          </Button>
         </a>
       </Link>
     </div>

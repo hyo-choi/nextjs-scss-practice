@@ -1,0 +1,9 @@
+.comment {
+  & + & {
+    border-top: 1px dashed #eee;
+  }
+}
+
+.name {
+  font-weight: bold;
+}
