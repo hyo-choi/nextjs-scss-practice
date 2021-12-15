@@ -1,16 +1,5 @@
 .button {
   display: inline-block;
-  margin-top: 1em;
-  div {
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 0.5em;
-    min-width: 2em;
-    text-align: center;
-    &:hover {
-      background-color: #e5e5e5;
-    }
-  }
   & + & {
     margin-left: 5px;
   }

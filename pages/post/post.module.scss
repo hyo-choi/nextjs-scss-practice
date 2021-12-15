@@ -1,0 +1,17 @@
+.article {
+  padding: 2em 0;
+  border-bottom: solid 1px #eee;
+}
+
+.other {
+  padding: 1em 0;
+  & + & {
+    border-top: solid 1px #eee;
+  }
+}
+
+.otherPosts {
+  h2 {
+    margin-bottom: 0;
+  }
+}

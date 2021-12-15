@@ -9,16 +9,20 @@ type PostPreviewProps = {
   body: string,
   href: string,
   imgSrc?: string,
+  inPost?: boolean,
 };
 
 const PostPreview = ({
-  title, body, href, imgSrc,
+  title, body, href, imgSrc, inPost,
 }: PostPreviewProps) => (
   <article className={styles.preview}>
     <Link href={href}>
       <a>
-        <div className={classNames(styles.post, { [styles.withImage]: imgSrc })}>
-          <h2>{title}</h2>
+        <div className={classNames(styles.content, {
+          [styles.withImage]: imgSrc, [styles.inPost]: inPost,
+        })}
+        >
+          {inPost ? <h3>{title}</h3> : <h2>{title}</h2>}
           <p>{body}</p>
         </div>
         {imgSrc && <div className={styles.image}><Image src={imgSrc} alt={title} width="100" height="100" /></div>}
@@ -29,6 +33,7 @@ const PostPreview = ({
 
 PostPreview.defaultProps = {
   imgSrc: null,
+  inPost: false,
 };
 
 export default PostPreview;
