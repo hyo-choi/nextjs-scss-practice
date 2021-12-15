@@ -1,5 +1,5 @@
 .preview {
-  p, h2 {
+  p, h2, h3 {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -10,10 +10,14 @@
   }
 }
 
-.post {
+.content {
   display: inline-block;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
+}
+
+.inPost {
+  padding: 0;
 }
 
 .withImage {
