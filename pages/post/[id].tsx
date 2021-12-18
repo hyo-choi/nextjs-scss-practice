@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
+import { PostInfoType } from '../../types/post';
 import styles from './post.module.scss';
-import { getPost, getPostCount, PostInfoType } from '../../data/posts';
+import { getPost, getPostCount } from '../../utils/api/posts';
 import PostPreview from '../../components/PostPreview/PostPreview';
 import Pagination from '../../components/Pagination/Pagination';
 import CommentContainer from '../../components/CommentContainer/CommentContainer';
+import { LIST_PER_PAGE } from '../../utils/constants';
 
 type PostProps = {
   prev?: PostInfoType,
@@ -85,6 +87,7 @@ export async function getStaticProps({ params }: any) {
   const post = await getPost(numId, true);
   const prev = numId > 1 ? await getPost(numId - 1) : null;
   const next = numId < postCount ? await getPost(numId + 1) : null;
+  const halfCount = Math.floor(LIST_PER_PAGE / 2);
 
   return {
     props: {
@@ -92,8 +95,8 @@ export async function getStaticProps({ params }: any) {
       post,
       next,
       pagination: {
-        start: numId - 5 > 0 ? numId - 5 : 1,
-        end: numId + 4 < postCount ? numId + 4 : postCount,
+        start: numId - halfCount > 0 ? numId - halfCount : 1,
+        end: numId + halfCount - 1 < postCount ? numId + halfCount - 1 : postCount,
         max: postCount,
       },
     },

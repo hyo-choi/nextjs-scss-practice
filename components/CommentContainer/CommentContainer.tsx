@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { CommentType } from '../../data/posts';
+import { CommentType } from '../../types/post';
+import { MAX_COMMENTS } from '../../utils/constants';
 import Button from '../Button/Button';
 import Comment from '../Comment/Comment';
 import styles from './CommentContainer.module.scss';
@@ -7,8 +8,6 @@ import styles from './CommentContainer.module.scss';
 type CommentContainerProps = {
   comments: CommentType[] | undefined,
 };
-
-const MAX_COMMENTS = 3;
 
 const FewComments = ({ comments }: { comments: CommentType[] }) => (
   <>

@@ -1,4 +1,4 @@
-import { CommentType } from '../../data/posts';
+import { CommentType } from '../../types/post';
 import styles from './Comment.module.scss';
 
 type CommentProps = {
