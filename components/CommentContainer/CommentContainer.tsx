@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { CommentType } from '../../types/post';
+import { MAX_COMMENTS } from '../../utils/constants';
 import Button from '../Button/Button';
 import Comment from '../Comment/Comment';
 import styles from './CommentContainer.module.scss';
@@ -7,8 +8,6 @@ import styles from './CommentContainer.module.scss';
 type CommentContainerProps = {
   comments: CommentType[] | undefined,
 };
-
-const MAX_COMMENTS = 3;
 
 const FewComments = ({ comments }: { comments: CommentType[] }) => (
   <>
@@ -21,11 +20,13 @@ const ManyComments = ({ comments }: { comments: CommentType[] }) => {
   const onButtonClick = useCallback(() => setOpen(!isOpen), [isOpen]);
   return (
     <>
-      {comments.slice(0, 3).map((comment) => <Comment key={comment.id} comment={comment} />)}
+      {comments.slice(0, MAX_COMMENTS)
+        .map((comment) => <Comment key={comment.id} comment={comment} />)}
       {!isOpen && (
         <div className={styles.button}><Button onClick={onButtonClick}>More Comments</Button></div>
       )}
-      {isOpen && comments.slice(3).map((comment) => <Comment key={comment.id} comment={comment} />)}
+      {isOpen && comments.slice(MAX_COMMENTS)
+        .map((comment) => <Comment key={comment.id} comment={comment} />)}
     </>
   );
 };

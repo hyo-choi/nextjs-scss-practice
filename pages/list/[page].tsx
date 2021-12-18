@@ -4,9 +4,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import PostPreview from '../../components/PostPreview/PostPreview';
 import { getPosts, getPostCount } from '../../utils/api/posts';
 import { PostType } from '../../types/post';
-
-const POST_PER_LIST = 5;
-const LIST_PER_PAGE = 10;
+import { LIST_PER_PAGE, POST_PER_LIST } from '../../utils/constants';
 
 type ListProps = {
   posts: PostType[],

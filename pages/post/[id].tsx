@@ -1,8 +1,9 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import classnames from 'classnames';
+import { PostInfoType } from '../../types/post';
 import styles from './post.module.scss';
 import { getPost, getPostCount } from '../../utils/api/posts';
-import { PostInfoType } from '../../types/post';
 import PostPreview from '../../components/PostPreview/PostPreview';
 import Pagination from '../../components/Pagination/Pagination';
 import CommentContainer from '../../components/CommentContainer/CommentContainer';
@@ -27,6 +28,9 @@ const Post = ({
   const { start, end, max } = pagination;
   return (
     <>
+      <Head>
+        <title>{content.title}</title>
+      </Head>
       <article className={styles.article}>
         <h1>{content.title}</h1>
         <p>{content.body}</p>
